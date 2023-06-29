@@ -1,8 +1,10 @@
 ## Steps to run the project:
 
 1. Clone the repository
+   `https://github.com/sanjaikumarsankar/abn-amro-assessment.git`
 
 2. Navigate to the project directory: Use the cd command to enter the project directory
+   `cd abn-amro-assessment`
 
 3. Install dependencies: Run the following command to install the project dependencies:
    `npm install`
