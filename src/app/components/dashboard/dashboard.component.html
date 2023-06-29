@@ -1,0 +1,27 @@
+<div class="jumbotron">
+  <h1 class="display-4">TV Show Dashboard</h1>
+  <p class="lead">Explore and discover your favorite TV shows.</p>
+
+  <select
+    class="form-select form-select-lg mb-3"
+    aria-label="Default select example"
+    [(ngModel)]="selectedGenre"
+  >
+    <option>All</option>
+    <option *ngFor="let genre of genres" [value]="genre">{{ genre }}</option>
+  </select>
+
+  <div class="form-group">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Search by genre"
+      [(ngModel)]="searchTerm"
+    />
+  </div>
+
+  <app-tv-show-list
+    *ngIf="tvShows"
+    [tvShows]="tvShows | tvShowFilterByGenre : selectedGenre : searchTerm"
+  ></app-tv-show-list>
+</div>

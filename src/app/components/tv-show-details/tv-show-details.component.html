@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <div class="row">
+        <div class="col-md-1">
+          <button class="btn btn-primary" (click)="backToDashboard()">
+            Back
+          </button>
+        </div>
+        <div class="col-md-11">
+          <h2>{{ show?.name }}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-7">
+          <img
+            class="img-fluid"
+            [src]="show?.image?.original"
+            alt="Show Poster"
+          />
+        </div>
+        <div class="col-md-4">
+          <p><strong>Genre:</strong> {{ show?.genres?.join(", ") }}</p>
+          <p><strong>Rating:</strong> {{ show?.rating?.average }}</p>
+          <p><strong>Summary:</strong></p>
+          <div [innerHTML]="show?.summary"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

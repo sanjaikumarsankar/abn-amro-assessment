@@ -1,0 +1,28 @@
+<h3>{{ title }}</h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Poster</th>
+      <th>Title</th>
+      <th>Genre</th>
+      <th>Rating</th>
+      <th>Rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let show of tvShows">
+      <td><img [src]="show.image.medium" alt="Show Poster" /></td>
+      <td>{{ show.name }}</td>
+      <td>{{ show.genres }}</td>
+      <td>{{ show.rating.average }}</td>
+      <td>
+        <button class="btn btn-primary" (click)="showDetails(show.id)">
+          View Details
+        </button>
+      </td>
+    </tr>
+    <tr *ngIf="tvShows?.length === 0">
+      <td colspan="5" class="text-center">No shows found.</td>
+    </tr>
+  </tbody>
+</table>
